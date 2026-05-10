@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "scaffold"
+version = "0.0.25"
+description = "Minimal CLI to containerize Node and Python projects"
+requires-python = ">=3.10"
+dependencies = [
+    "typer>=0.12",
+    "rich>=13",
+    "jinja2>=3.1",
+]
+
+[project.scripts]
+scaffold = "scaffold_app.cli:app"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["scaffold_app*"]
